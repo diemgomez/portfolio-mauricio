@@ -1,0 +1,319 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- CRITICAL for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mauricio Gomez - IT Support Specialist</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Use a modern, clean font (matches the example site) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      /* Simple scroll-spy active state */
+      nav a.active {
+        color: #8C271E;
+        font-weight: 700; /* Bolder */
+      }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Main container with two-column layout for desktop -->
+    <div class="container mx-auto max-w-6xl p-4 md:p-2 lg:p-2">
+        <div class="md:flex md:gap-16">
+
+            <!-- 
+              LEFT COLUMN (Header & Nav)
+              - Sticky on desktop
+              - Hidden on mobile
+            -->
+            <aside class="hidden md:block md:w-1/3 lg:w-1/4 md:sticky md:top-10 md:h-screen">
+                <div class="flex flex-col gap-4">
+                   
+                    <!--Profile Picture-->
+                   <img src="{{ url_for('static', filename='Profile_Picture.png') }}" 
+                        alt="Mauricio Gomez Profile" 
+                        class="w-72 h-72 object-cover rounded-full mb-2"> <!-- Now rounded-full -->
+
+                    <h1 class="text-4xl font-bold text-[#8C271E]">Mauricio Gomez</h1>
+                    <h2 class="text-2xl font-medium text-[#8C271E]">IT Support Specialist</h2>
+                    <p class="text-black text-lg">
+                        Certified IT Support Specialist | Trilingual Customer Support | Process Automation
+                    </p>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="mt-12">
+                    <ul class="space-y-3">
+                        <li><a href="#My Journey" class="text-black hover:text-[#8C271E] transition duration-300 text-xl font-medium">My Journey</a></li>
+                        <li><a href="#experience" class="text-black hover:text-[#8C271E] transition duration-300 text-xl font-medium">Experience</a></li>
+                        <li><a href="#projects" class="text-black hover:text-[#8C271E] transition duration-300 text-xl font-medium">Projects</a></li>
+                        <li><a href="#blog" class="text-black hover:text-[#8C271E] transition duration-300 text-xl font-medium">Blog</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Social Links -->
+                <div class="flex space-x-5 mt-12">
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/diemgomez" target="_blank" rel="noopener noreferrer" class="text-[#8C271E] hover:text-[#8C271E]/80 transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.201 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/mauricio-gomez-28a814146/" target="_blank" rel="noopener noreferrer" class="text-[#8C271E] hover:text-[#8C271E]/80 transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                    </a>
+                    <!-- Email Icon -->
+                    <a href="mailto:zemog150790@gmail.com" class="text-[#8C271E] hover:text-[#8C271E]/80 transition duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- 
+              RIGHT COLUMN (Main Content)
+              - Takes full width on mobile
+            -->
+            <main class="w-full md:w-2/3 lg:w-3/4">
+
+                <!-- Mobile Header -->
+                <div class="md:hidden mb-8">
+                    <!-- PREVIEW: Replaced 'url_for' with a placeholder -->
+                    <img src="{{ url_for('static', filename='Profile_Picture.png') }}"  alt="Mauricio Gomez Profile" class="w-24 h-24 object-cover rounded-full mb-2">
+                    <h1 class="text-5xl font-bold text-[#8C271E]">Mauricio Gomez</h1>
+                    <h2 class="text-2xl font-medium text-[#8C271E]">IT Support Specialist</h2>
+                    <p class="text-black text-lg mt-4">
+                         I build responsive and efficient web applications using Python and modern web technologies.
+                    </p>
+                    <!-- Mobile Social Links -->
+                    <div class="flex space-x-5 mt-6">
+                        <a href="https://github.com/diemgomez" target="_blank" rel="noopener noreferrer" class="text-[#8C271E] hover:text-[#8C271E]/80 transition duration-300">
+                            <!-- GitHub Icon -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.201 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mauricio-gomez-28a814146/" target="_blank" rel="noopener noreferrer" class="text-[#8C271E] hover:text-[#8C271E]/80 transition duration-300">
+                            <!-- LinkedIn Icon -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                        </a>
+                        <a href="mailto:zemog150790@gmail.com" class="text-[#8C271E] hover:text-[#8C271E]/80 transition duration-300">
+                            <!-- Email Icon -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 
+                  CONTENT SECTIONS 
+                  - scroll-mt-20 is for scroll-padding
+                -->
+                <!-- My Journey Section -->
+                <section id="My Journey" class="mb-16 scroll-mt-20 bg-white">
+                    <h3 class="text-3xl font-bold text-[#8C271E] mb-6 md:hidden">My Journey</h3>
+                    <h1 class="text-4xl font-semibold text-[#8C271E] mb-6">My Journey</h1>
+                    <div class="space-y-2 text-black text-lg">
+                        <p>Hello! I'm Mauricio Gomez, an IT Support Specialist who is passionate about solving problems and helping people.</p>
+                        <p>
+                            My journey into tech was sparked by a challenge at PriceSmart. Our team was stuck with slow, manual Excel reports, so I took the initiative to teach myself DOMO, an unused tool we had. I ended up automating our processes, turning hours of work into minutes, and discovering my passion for using technology to help a team work better.
+                        </p>
+                        <p>To build on this foundation, I've since earned several professional certifications in IT Support and Cybersecurity.</p>
+                        <p>
+                            I combine these technical skills with a strong background in customer service. As a fluent speaker of English, French, and Spanish, I am driven to provide clear, patient, and empathetic support to diverse teams. I'm currently seeking a challenging IT Support role where I can put my skills to work.
+                        </p>
+                        <!-- START OF NEW BADGE SECTION -->
+                    <div class="pt-6">
+                        <h4 class="text-2xl font-semibold text-[#8C271E] mb-4">Education & Certifications</h4>
+                    <div class="grid grid-cols-3 sm:grid-cols-3 gap-5">
+
+                    <!-- CompTIA Badge -->
+                    <a href="https://www.credly.com/badges/4b6df882-a190-4b95-a3c8-91cd540b0ec7/public_url" target="_blank" rel="noopener noreferrer" class="group block text-center p-4 rounded-lg transition-shadow">
+                        <img src="{{ url_for('static', filename='comptia-it-fundamentals-itf-certification.1.png') }}" alt="CompTIA Badge" style="width: 100px; height: 100px; margin: 0 auto 0.75rem auto;">
+                        <p class="font-size: 0.875rem; font-weight: 500; color: #111827;">CompTIA IT Fundamentals+ (ITF+)</p>
+                    </a>
+                
+                    <!-- Google Badge -->
+                    <a href="https://www.credly.com/badges/7ec5a466-8f7b-4359-8cb6-9a94df42844e/public_url" target="_blank" rel="noopener noreferrer" class="group block text-center p-4 rounded-lg transition-shadow">
+                        <img src="{{ url_for('static', filename='certificado-de-ciberseguridad-de-google.png') }}"alt="Google Cybersecurity Badge" style="width: 100px; height: 100px; margin: 0 auto 0.75rem auto;">
+                        <p class="font-size: 0.875rem; font-weight: 500; color: #111827;">Google Cybersecurity</p>
+                    </a>
+
+                    <!-- IBM Badge -->
+                    <a href="https://www.credly.com/badges/7ec5a466-8f7b-4359-8cb6-9a94df42844e/public_url" target="_blank" rel="noopener noreferrer" class="group block text-center p-4 rounded-lg transition-shadow">
+                        <img src="{{ url_for('static', filename='certificado-de-ciberseguridad-de-google.png') }}" alt="IBM IT Badge" style="width: 100px; height: 100px; margin: 0 auto 0.75rem auto;">
+                        <p class="font-size: 0.875rem; font-weight: 500; color: #111827;">IBM IT Support Specialist</p>
+                    </a>
+                    </div>
+                    </div>
+
+
+                    
+                    
+                    <!-- END OF NEW BADGE SECTION -->
+                    </div>  
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience" class="mb-16 scroll-mt-20 bg-white">
+                    <h3 class="text-3xl font-semibold text-[#8C271E] mb-6 md:hidden">Experience</h3>
+                    <div class="space-y-8">
+                        <h1 class="text-4xl font-bold text-[#8C271E]">Experience</h1>
+                        
+                        <!-- Experience Card 1 -->
+                        <div class="rounded-lg p-6 bg-transparent">
+                            <div class="flex flex-col md:flex-row md:gap-6">
+                                <div class="w-full md:w-1/4 text-base text-black mb-2 md:mb-0">2021 — 2023</div>
+                                <div class="w-full md:w-3/4">
+                                    <h4 class="text-xl font-semibold text-black">Vendor Promotions Analyst · PriceSmart</h4>
+                                    <p class="text-black text-lg mt-2">
+                                        Collected, analyzed, and organized sales data to provide insights. Developed automated dashboards and regular sales reports to analyze customer trends, sales, and KPIs.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">SQL</span>
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Data Analysis</span>
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Dashboards</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience Card 2 -->
+                        <div class="rounded-lg p-6 bg-transparent">
+                            <div class="flex flex-col md:flex-row md:gap-6">
+                                <div class="w-full md:w-1/4 text-base text-black mb-2 md:mb-0">2020 — 2021</div>
+                                <div class="w-full md:w-3/4">
+                                    <h4 class="text-xl font-semibold text-black">Customer Service Agent · Sitel</h4>
+                                    <p class="text-black text-lg mt-2">
+                                        Scheduled pickups, tracked packages, and answered service questions. Advised customers on service options and continuously improved satisfaction through conflict resolution.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Customer Service</span>
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Troubleshooting</span>
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Conflict Resolution</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience Card 3 -->
+                        <div class="rounded-lg p-6 bg-transparent">
+                            <div class="flex flex-col md:flex-row md:gap-6">
+                                <div class="w-full md:w-1/4 text-base text-black mb-2 md:mb-0">2013 — 2018</div>
+
+                                <div class="w-full md:w-3/4">
+                                    <h4 class="text-xl font-semibold text-black">GIS Technician · Alcanos de Colombia S.A. E.S.P</h4>
+                                    <p class="text-black text-lg mt-2">
+                                        Digitized vector maps for the oil and gas industry using AutoCAD Map. Created georoutes for readings and provided dedicated support to internal and external clients.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">GIS</span>
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">AutoCAD Map</span>
+                                        <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Technical Support</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="mb-16 scroll-mt-20">
+                    <h3 class="text-3xl font-semibold text-[#8C271E] mb-6 md:hidden">Projects</h3>
+                    <div class="space-y-8">
+
+                        <!-- Project Card 1 -->
+                        <div class="rounded-lg p-6">
+                            <h4 class="text-xl font-semibold text-gray-900">Data Analysis Dashboard</h4>
+                            <p class="text-gray-700 text-lg mt-2">
+                                A web app built with Flask and Plotly to visualize sales data from a CSV upload.
+                                Includes features for filtering, sorting, and exporting charts.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Flask</span>
+                                <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                                <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Plotly</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 text-[#8C271E] hover:text-[#8C271E]/80 mt-4 text-lg">
+                                View on GitHub
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="rounded-lg p-6">
+                            <h4 class="text-xl font-semibold text-gray-900">Task Management API</h4>
+                            <p class="text-gray-700 text-lg mt-2">
+                                A RESTful API for a to-do list application, complete with user authentication using JWT tokens.
+                                Fully documented with Swagger/OpenAPI.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">Flask-RESTful</span>
+                                <span class="bg-[#8C271E]/20 text-[#8C271E] text-sm font-medium px-3 py-1 rounded-full">JWT</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 text-[#8C271E] hover:text-[#8C271E]/80 mt-4 text-lg">
+                                View on GitHub
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Blog Section -->
+                <section id="blog" class="mb-16 scroll-mt-20">
+                    <h3 class="text-3xl font-semibold text-[#8C271E] mb-6 md:hidden">Blog</h3>
+                    <div class="space-y-8">
+
+                        <!-- Blog Post Card 1 -->
+                        <div class="rounded-lg p-6">
+                            <span class="text-base text-[#ABA194]">October 26, 2025</span>
+                            <h4 class="text-xl font-semibold text-gray-900 mt-1">My Journey into IT Support</h4>
+                            <p class="text-gray-700 text-lg mt-2">
+                                A brief post about what inspired me to move into the tech field and my experience with getting certified.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-[#8C271E] hover:text-[#8C271E]/80 mt-4 text-lg">
+                                Read More
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+
+                        <!-- Blog Post Card 2 -->
+                        <div class="rounded-lg p-6">
+                            <span class="text-base text-[#ABA194]">October 20, 2025</span>
+                            <h4 class="text-xl font-semibold text-gray-900 mt-1">Why I Chose Python for Data Analysis</h4>
+                            <p class="text-gray-700 text-lg mt-2">
+                                Exploring the power of Pandas, Plotly, and Flask for building quick, insightful data dashboards.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-[#8C271E] hover:text-[#8C271E]/80 mt-4 text-lg">
+                                Read More
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Contact / Footer -->
+                <footer class="mt-24 pb-12">
+                     <div class="text-center">
+                        <a href="mailto:zemog150790@gmail.com" class="inline-block bg-[#8C271E] text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-[#8C271E]/90 transition duration-300 text-lg">
+                            Get In Touch
+                        </a>
+                    </div>
+                    <p class="text-center text-gray-500 text-base mt-12">
+                        Built with Python & Flask, styled with Tailwind CSS.
+                    </p>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

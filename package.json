@@ -1,0 +1,19 @@
+{
+      "name": "mauricio-portfolio",
+      "version": "1.0.0",
+      "description": "A portfolio website built with Flask and Tailwind CSS to show case my projects, publish my writtenscripts and give the chance to know a little bit about me",
+      "main": "index.js",
+      "scripts": {
+        "build:css": "npx tailwindcss -i ./input.css -o ./static/output.css --watch"
+      },
+      "keywords": [
+        "flask",
+        "tailwind",
+        "portfolio"
+      ],
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "tailwindcss": "^3.4.1"
+      }
+    }
