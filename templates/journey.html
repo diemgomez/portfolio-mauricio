@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="mr-32 ml-32 mt-8">
-    <!--MY JOURNEY SECTION-->
+
+<!--MY JOURNEY SECTION-->
+<section class="mr-32 ml-32 mt-8 p-6 md:p-10">
+    
     <!--Title-->
     <h1 class="text-5xl font-bold text-[#1d1d1d] mt-12 mb-6 ml-4">My Journey</h1>
-    <hr class="mb-4 ml-4 mr-4">
+    <hr class="mb-4">
     
     <!--Content-->
     <div class="flex flex-col md:flex-row md:gap-8">
@@ -29,79 +31,135 @@
             <img 
                 src="{{ url_for('static', filename='Profile_Picture.png') }}" 
                 alt="Mauricio Gomez"
-                class="rounded-full shadow-2xl w-3/4 h-auto object-cover mt-6 ml-4"
+                class="rounded-full shadow-2xl w-3/4 h-auto object-cover mt-6 ml-4 mr-6"
             >
 
         </div>
-
-
     </div>
-    
-    <h1 class="text-5xl font-bold text-[#1d1d1d] mt-12 mb-6 ml-4">Education & Certificates</h1>
-    <hr class="ml-4 mr-4">
-    <div class="flex flex-col md:flex-row md:gap-8">
-        <div class="w-full flex md:w-2/5 flex-shrink-0 min-w-0">
-            <img 
-                src="{{ url_for('static', filename='education_and_progress.png') }}" 
-                alt="Education and progress"
-                class=" w-full h-auto object-cover mt-6 ml-4"
-            >
-        </div>
-        <div class="w-full md:w-3/5 flex-shrink-0 mt-2 ml-4">
-            <h2 class="ml-4 mt-2 font-normal text-[#1d1d1d] text-2xl">Courses</h2>
-            <p class="ml-4 mt-6 mb-6 font-light text-[#1d1d1d] text-xl">
-                CompTIA IT Fundamental (ITF+)
-            </p>
-            <p class="ml-4 mt-6 mb-6 font-light text-[#1d1d1d] text-xl">
-                Google Cybersecurity - Coursera
-            </p>
-            <p class="ml-4 mt-6 mb-6 font-light text-[#1d1d1d] text-xl">
-                IBM IT Support Specialist
-            </p>
-        </div>
-    </div>
-    
+</section>
+
+<!--EDUCATION AND CERTIFICATES SECTION-->
+<section class="bg-white p-6 md:p-10">
+    <div class="mr-32 ml-32">
+        <!--TITLE-->
+        <h1 class="text-5xl font-bold text-[#1d1d1d] mt-4 mb-6 ml-4">Education & Certificates</h1>
+            <hr class="ml-4 mr-4">
+            <div class="flex flex-col md:flex-row md:gap-8">     
+                
+                <!--IMAGE SECTION 2/5-->
+                <div class="w-full h-auto md:w-2/5 flex-shrink-0 min-w-0">
+                    <img 
+                        src="{{ url_for('static', filename='education_and_progress.png') }}" 
+                        alt="Education and progress"
+                        class=" w-full h-auto object-cover mt-6 ml-4"
+                    >
+                </div>
+                
+                <!--CONTENT SECTION 3/5-->
+                <div class="w-full h-auto md:w-3/5 flex-shrink-0">
+
+                    <!--FORMAL EDUCATION SECTION-->
+                    <div class="w-full mt-4 ml-4">
+                        <h2 class="font-semibold text-[#1d1d1d] text-2xl">
+                            Formal Education
+                        </h2>
+                    </div>
+
+                    <div class="w-full ml-4 mt-2">
+                        <p class="w-full h-auto font-light text-[#1d1d1d] text-xl">
+                            Universidad Surcolombiana - Business Administration
+                        </p>
+                        <p class="w-full h-auto font-regular text-[#1d1d1d] text-l ">
+                            Huila - Colombia 
+                        </p>
+                    </div>
+
+                    <!--COURSES AND CERTIFICATES SECTION-->
+                    <div class="flex flex-col md:flex-row mt-4">
+                        
+                        <!--COURSES SUB-SECTION-->
+                        <div class="md:1/2 w-full h-auto">
+                            <div class="w-full ml-4 mb-2">
+                                
+                                <!--Title-->
+                                <h2 class="font-semibold text-[#1d1d1d] text-2xl">
+                                    Courses
+                                </h2>
+                            </div>
+
+                            <div class="w-full h-auto ml-4">
+                                
+                                <!--GOOGLE CYBERSECURITY BAGDE-->
+                                <a href="https://www.credly.com/badges/7ec5a466-8f7b-4359-8cb6-9a94df42844e/public_url" target="_blank" rel="noopener noreferrer group block">
+                                    <p class="w-full h-auto font-light text-[#1d1d1d] text-xl">
+                                        Google Cybersecurity
+                                    </p>
+                                    <p class="w-full h-auto font-regular text-[#1d1d1d] text-l">
+                                        September - 2025
+                                    </p>
+                                </a>
+                                
+                                <!--IBM IT SUPPORT ESPECIALIST CERTIFICATE-->
+                                <a href="https://www.coursera.org/account/accomplishments/professional-cert/2ZUSE3GDVT2C" target="_blank" rel="noopener noreferrer group block">
+                                    <p class="w-full h-auto font-light text-[#1d1d1d] text-xl mt-2">
+                                        IBM IT Support Specialist
+                                    </p>
+                                    <p class="w-full h-auto font-regular text-[#1d1d1d] text-l">
+                                        May - 2025
+                                    </p>
+                                </a>
+
+                                <!--INFORMACION TECHNOLOGY (IT) AND CLOUD FUNDAMENTALS CERTIFICATE-->
+                                <a href="https://www.coursera.org/account/accomplishments/professional-cert/2ZUSE3GDVT2C" target="_blank" rel="noopener noreferrer group block">
+                                    <p class="w-full h-auto font-light text-[#1d1d1d] text-xl mt-2">
+                                        Information Technology (IT) and Cloud Fundamentals
+                                    </p>
+                                    <p class="w-full h-auto font-regular text-[#1d1d1d] text-l">
+                                        May - 2025
+                                    </p>
+                                </a>
+                                
+                                <!--FOUNDATIONS OF USER EXPERIENCE (UX) DESIGN CERTIFICATE-->
+                                <a href="https://www.coursera.org/account/accomplishments/verify/KX2RAE8ADYA1" target="_blank" rel="noopener noreferrer group block">
+                                    <p class="w-full h-auto font-light text-[#1d1d1d] text-xl mt-2">
+                                        Foundations of User Experience (UX) Design
+                                    </p>
+                                    <p class="w-full h-auto font-regular text-[#1d1d1d] text-l">
+                                        May - 2025
+                                    </p>
+                                </a>
+
+                            </div>
+                        </div>
+                        <!--CERTIFICATES SUB-SECTION-->
+                        <div class="md:1/2 w-full h-auto">
+                            <div class="w-full ml-4">
+                                <!--Title-->
+                                <h2 class="font-semibold text-[#1d1d1d] text-2xl">
+                                    Certificates
+                                </h2>
+                            </div>
+                              
+                            <!--COMPTIA FUNDAMENTAL ITF+-->
+                            <div class="w-full h-auto ml-4">
+                                <!--COMPTIA FUNDAMENTALS+ (ITF+)-->
+                                <a href="https://www.credly.com/badges/4b6df882-a190-4b95-a3c8-91cd540b0ec7/public_url" target="_blank" rel="noopener noreferrer group block">
+                                    <p class="w-full h-auto font-light text-[#1d1d1d] text-xl mt-2">
+                                        CompTIA IT Fundamentals+ (ITF+)
+                                    </p>
+                                    <p class="w-full h-auto font-regular text-[#1d1d1d] text-l">
+                                        June - 2025
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div> 
 </section>    
     
 
 
 
-<!-- Timeline structure 
-<div class="relative border-l-2 border-blue-500 ml-4 py-6">
-    -->
-    <!-- Timeline Item 1 
-    <div class="mb-10 ml-8">
-        <span class="absolute flex items-center justify-center w-8 h-8 bg-blue-500 rounded-full -left-4 ring-4 ring-white">
-            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zM4 8h12v8H4V8z" clip-rule="evenodd"></path></svg>
-        </span>
-        <h3 class="text-xl font-semibold text-gray-900">2023 - Started Learning Python</h3>
-        <time class="block mb-2 text-sm font-normal leading-none text-gray-500">January 2023</time>
-        <p class="text-base text-gray-700">Began my programming journey with a focus on Python, learning data structures, algorithms, and object-oriented principles.</p>
-    </div>
-    -->
-
-    <!-- Timeline Item 2 
-    <div class="mb-10 ml-8">
-        <span class="absolute flex items-center justify-center w-8 h-8 bg-blue-500 rounded-full -left-4 ring-4 ring-white">
-             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-        </span>
-        <h3 class="text-xl font-semibold text-gray-900">2024 - Discovered Web Development</h3>
-        <time class="block mb-2 text-sm font-normal leading-none text-gray-500">March 2024</time>
-        <p class="text-base text-gray-700">Fell in love with building web applications. Dived deep into HTML, CSS, JavaScript, and the Flask framework for the backend.</p>
-    </div>
-    -->
-
-    <!-- Timeline Item 3 
-    <div class="mb-10 ml-8">
-        <span class="absolute flex items-center justify-center w-8 h-8 bg-blue-500 rounded-full -left-4 ring-4 ring-white">
-            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 8.586V3a1 1 0 10-2 0v5.586L8.707 7.293zM3 9a2 2 0 012-2h10a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path></svg>
-        </span>
-        <h3 class="text-xl font-semibold text-gray-900">2025 - Deployed First Major Project</h3>
-        <time class="block mb-2 text-sm font-normal leading-none text-gray-500">September 2025</time>
-        <p class="text-base text-gray-700">Successfully designed, built, and deployed a full-stack data visualization tool using Dash, Flask, and PostgreSQL.</p>
-    </div>
-    -->
-<!--
-</div>
--->
 {% endblock %}
