@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mauricio Gomez</title>
+    <title>Mauricio Gomez | IT Support Specialist</title>
     <!-- Link to the compiled Tailwind CSS file -->
     <link href="{{ url_for('static', filename='output.css') }}" rel="stylesheet">
     <!-- Alpine.js for mobile menu interactivity -->
@@ -28,10 +28,10 @@
           This sidebar is hidden on mobile (hidden) and shown from 'md' breakpoint up (md:block).
           It's sticky, full-height, and has a fixed width.
         -->
-        <aside class="hidden md:block w-64 flex-shrink-0 bg-[#303c07] text-gray-200 p-6">
+        <aside class="hidden md:block w-64 flex-shrink-0 bg-[#0E0E1B] text-gray-200 p-6">
             <div class="sticky top-6">
-                <h1 class="text-5xl font-semibold text-left text-[#dae1c4] mb-2 mt-12">Mauricio Gomez</h1>
-                <p class="text-sm font-light text-left text-[#dae1c4] mb-4">
+                <h1 class="text-5xl font-semibold text-left text-[#ffffff] mb-2 mt-12">Mauricio Gomez</h1>
+                <p class="text-sm font-light text-left text-[#ffffff] mb-4">
                     Certified IT Support Specialist | Trilingual Customer Support | Process Automation
                 </p>
                 <nav class="space-y-2">
@@ -40,23 +40,23 @@
                       If 'active_page' passed from Flask matches, apply 'bg-gray-700 text-white'.
                     -->
                     <a href="{{ url_for('home') }}" 
-                       class="flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-[#4c5b19] hover:text-[#dae1c4]
-                       {% if active_page == 'projects' %}bg-[#4c5b19] text-[#dae1c4]{% else %}text-[#dae1c4]{% endif %}">
+                       class="flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-[#2F2F58] hover:text-[#FFFFFF]
+                       {% if active_page == 'projects' %}bg-[#2F2F58] text-[#FFFFFF]{% else %}text-[#FFFFFF]{% endif %}">
                         <!-- SVG icon for visual flair -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                         <span>Projects</span>
                     </a>
                     
                     <a href="{{ url_for('blog') }}" 
-                       class="flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-[#4c5b19] hover:text-[#dae1c4]
-                       {% if active_page == 'blog' %}bg-[#4c5b19] text-[#dae1c4]{% else %}text-[#dae1c4]{% endif %}">
+                       class="flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-[#2F2F58] hover:text-[#FFFFFF]
+                       {% if active_page == 'blog' %}bg-[#2F2F58] text-[#FFFFFF]{% else %}text-[#FFFFFF]{% endif %}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 12h6m-1-4h1V4a1 1 0 00-1-1H7a1 1 0 00-1 1v4h1m-1 8v1a1 1 0 001 1h8a1 1 0 001-1v-1m-4-4H9m13-6V6a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m0 4.5V14"></path></svg>
                         <span>Blog</span>
                     </a>
                     
                     <a href="{{ url_for('journey') }}" 
-                       class="flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-[#4c5b19] hover:text-[#dae1c4]
-                       {% if active_page == 'journey' %}bg-[#4c5b19] text-[#dae1c4]{% else %}text-[#dae1c4]{% endif %}">
+                       class="flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-[#2F2F58] hover:text-[#FFFFFF]
+                       {% if active_page == 'journey' %}bg-[#2F2F58] text-[#FFFFFF]{% else %}text-[#FFFFFF]{% endif %}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         <span>My Journey</span>
                     </a>
